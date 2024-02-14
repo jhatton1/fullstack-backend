@@ -11,4 +11,4 @@ FROM openjdk:17-jdk-slim
 WORKDIR /Fullstack-Backend
 COPY --from=build /Fullstack-Backend/target/fullstack-backend-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "my-application.jar"]
+ENTRYPOINT ["java", "-jar", "fullstack-backend-0.0.1-SNAPSHOT.jar"]
