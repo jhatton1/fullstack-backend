@@ -7,9 +7,8 @@ COPY . .
 RUN mvn package -DskipTests
 
 # Runtime Stage
-FROM adoptopenjdk:11-jdk-hotspot
+FROM openjdk:17-jdk-slim
 WORKDIR /Fullstack-Backend
-COPY --from=build /Fullstack-Backend/target/fullstack-backend-0.0.1-SNAPSHOT.jar fullstack-backend.jar
+COPY --from=build /Fullstack-Backend/target/fullstack-backend-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "fullstack-backend.jar"]
-
+ENTRYPOINT ["java", "-jar", "my-application.jar"]
