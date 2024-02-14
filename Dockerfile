@@ -7,7 +7,7 @@ COPY . .
 RUN mvn package -DskipTests
 
 # Runtime Stage
-FROM openjdk:17-jdk-slim
+FROM openjdk:23-jdk-slim
 WORKDIR /Fullstack-Backend
 COPY --from=build /Fullstack-Backend/target/fullstack-backend-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
